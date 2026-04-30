@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            width: 320px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .radio-group {
+            margin-top: 5px;
+        }
+
+        .radio-group input {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            border: none;
+            background: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Task Form</h2>
+
+    <form action="insert_task.php" method="post">
+
+        <label>Task Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Description:</label>
+        <input type="text" name="description" required>
+
+        <label>Start Date:</label>
+        <input type="date" name="start_date" required>
+
+        <label>End Date:</label>
+        <input type="date" name="end_date" required>
+
+        <label>Priority:</label>
+        <select name="priority" required>
+            <option value="">-- Select Priority --</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+
+        <label>Category:</label>
+        <select name="category" required>
+            <option value="">-- Select Category --</option>
+            <option value="Bug">Bug</option>
+            <option value="Fix">Fix</option>
+        </select>
+
+        <label>Status:</label>
+        <select name="status" required>
+            <option value="To Do">To Do</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Done">Done</option>
+        </select>
+
+        <label>Project ID:</label>
+        <input type="number" name="project_id" required>
+
+        <label>Archived:</label>
+        <div class="radio-group">
+            <input type="radio" name="archived" value="0" checked> No
+            <input type="radio" name="archived" value="1"> Yes
+        </div>
+
+        <button type="submit">Submit Task</button>
+
+    </form>
+</div>
+
+</body>
+</html>
